@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="courseassignment.nitin.primeornot.MainActivity"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:weightSum="100">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:background="@android:color/white"
+
+            android:elevation="10dp">
+            <TextView
+                android:id="@+id/prime_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:text="123"
+                android:textSize="50sp"/>
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="20dp"
+                android:layout_above="@+id/prime_display"
+                android:text="@string/question"
+                android:textSize="25sp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+
+            android:layout_weight="80"
+            >
+            <Button
+                android:id="@+id/incorrect_btn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/incorrect_btn_text"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:onClick="checkAnswer"/>
+            <Button
+                android:id="@+id/correct_btn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/correct_btn_text"
+                android:layout_margin="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/incorrect_btn"
+                android:onClick="checkAnswer"
+                />
+
+            <Button
+                android:id="@+id/next_btn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/next_btn_text"
+                android:layout_toRightOf="@+id/incorrect_btn"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:onClick="nextNumber"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
