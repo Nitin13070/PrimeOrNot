@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public final int MIN_DISTANCE=150;
     private float y1,y2;
     private int highScore,currentScore;
+    TextView currScoreDisplay;
 
     private boolean isPrime(int n){
         if (n%2==0) return false;
@@ -51,9 +52,13 @@ public class MainActivity extends AppCompatActivity {
         }
         TextView randNumDisplay = (TextView) findViewById(R.id.prime_display);
 
+        currScoreDisplay = (TextView) findViewById(R.id.curr_score);
+
+
         randNumDisplay.setText(Integer.toString(randomNumber));
         highScore = getApplicationContext().getSharedPreferences(getString(R.string.shared_pref),Context.MODE_PRIVATE).getInt(getString(R.string.score_title),0);
         currentScore=0;
+        currScoreDisplay.setText(Integer.toString(currentScore));
     }
 
     @Override
@@ -140,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 randNumDisplay.setText(Integer.toString(randomNumber));
                 break;
         }
-
+        currScoreDisplay.setText(Integer.toString(currentScore));
         if(currentScore > highScore){
             highScore = currentScore;
 

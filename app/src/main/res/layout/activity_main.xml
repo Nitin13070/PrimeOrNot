@@ -22,6 +22,26 @@
 
             android:elevation="10dp">
             <TextView
+                android:id="@+id/curr_score"
+                android:layout_toLeftOf="@+id/score_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:text="23"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/title_score"
+                android:layout_toLeftOf="@+id/curr_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Current Score : "
+                android:textSize="20sp"/>
+
+
+            <TextView
                 android:id="@+id/prime_display"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
