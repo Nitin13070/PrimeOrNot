@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -79,9 +80,19 @@ public class MainActivity extends AppCompatActivity {
 
                     float distance = y1 - y2;
                     if(distance > MIN_DISTANCE){
-                        //go to new activity
-                        Intent intent = new Intent(this,Score.class);
-                        startActivity(intent);
+
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                        View dialogView = getLayoutInflater().inflate(R.layout.activity_score,null);
+
+                        TextView scoreTextView = (TextView) dialogView.findViewById(R.id.score);
+
+                        int highScore = getApplicationContext().getSharedPreferences(getString(R.string.shared_pref),Context.MODE_PRIVATE).getInt(getString(R.string.score_title),0);
+                        scoreTextView.setText(Integer.toString(highScore));
+
+
+                        builder.setView(dialogView);
+                        builder.create().show();
                     }
 
 
@@ -159,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
         randomNumber = getRandomNumber();
         TextView randNumDisplay = (TextView) findViewById(R.id.prime_display);
         randNumDisplay.setText(Integer.toString(randomNumber));
-        
+
     }
 
 }

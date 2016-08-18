@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="courseassignment.nitin.primeornot.MainActivity"
     >
     <LinearLayout
@@ -18,8 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="20"
-            android:background="@android:color/white"
-
+            android:background="@drawable/paper"
             android:elevation="10dp">
             <TextView
                 android:id="@+id/curr_score"
