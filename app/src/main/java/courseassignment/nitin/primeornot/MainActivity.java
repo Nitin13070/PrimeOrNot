@@ -80,8 +80,6 @@ public class MainActivity extends AppCompatActivity {
 
                     float distance = y1 - y2;
                     if(distance > MIN_DISTANCE){
-
-
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
                         View dialogView = getLayoutInflater().inflate(R.layout.activity_score,null);
 
