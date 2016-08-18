@@ -6,9 +6,6 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.transition.Fade;
-import android.transition.Slide;
-import android.transition.TransitionInflater;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -46,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         if(savedInstanceState == null){
             randomNumber = getRandomNumber();
+            currentScore = 0;
         }
         else {
             randomNumber = savedInstanceState.getInt("RandomNumber");
+            currentScore = savedInstanceState.getInt("CurrentScore");
         }
         TextView randNumDisplay = (TextView) findViewById(R.id.prime_display);
 
@@ -57,13 +56,14 @@ public class MainActivity extends AppCompatActivity {
 
         randNumDisplay.setText(Integer.toString(randomNumber));
         highScore = getApplicationContext().getSharedPreferences(getString(R.string.shared_pref),Context.MODE_PRIVATE).getInt(getString(R.string.score_title),0);
-        currentScore=0;
+        //currentScore=0;
         currScoreDisplay.setText(Integer.toString(currentScore));
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putInt("RandomNumber",randomNumber);
+        outState.putInt("CurrentScore",currentScore);
         super.onSaveInstanceState(outState);
     }
 
@@ -159,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
         randomNumber = getRandomNumber();
         TextView randNumDisplay = (TextView) findViewById(R.id.prime_display);
         randNumDisplay.setText(Integer.toString(randomNumber));
+        
     }
 
 }
