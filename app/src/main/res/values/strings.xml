@@ -4,9 +4,14 @@
     <string name="correct_btn_text">Yes</string>
     <string name="incorrect_btn_text">No</string>
     <string name="next_btn_text">Next</string>
+    <string name="hint_btn_text">Hint</string>
+    <string name="cheat_btn_text">Cheat</string>
+    <string name="back_btn_text">Back</string>
     <string name="font_awesome_smile_happy">&#xf118;</string>
     <string name="font_awesome_smile_sad">&#xf119;</string>
+    <string name="font_awesome_double_up">&#xf102;</string>
     <string name="score_title">Your High Score</string>
     <string name="high_score">HighScore</string>
     <string name="shared_pref">com.primeornot.sharedpref</string>
+    <string name="hint_text">A number is greater than 1 is called a prime number, if it has only two factors, namely 1 and the number itself.</string>
 </resources>
